@@ -25,14 +25,9 @@ public class MyController {
                 "|| Age - " + animal.getAge() + '.';
     }
 
-    /*
-    @GetMapping(path="/get")
-    public @ResponseBody String get() {
-        Animal animal = new Animal();
+    @GetMapping(path="/all")
+    public @ResponseBody Iterable<Animal> getAll() {
+        return animalCRUD.findAll();
+    }
 
-        animalCRUD.save(animal);
-        return "Name - " + animal.getName() +
-                "|| Nickname - " + animal.getNickname() +
-                "|| Age - " + animal.getAge() + '.';
-    } */
 }
